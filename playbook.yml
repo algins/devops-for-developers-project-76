@@ -1,0 +1,7 @@
+- name: Install pip and docker modules
+  hosts: all
+  become: true
+
+  roles:
+    - geerlingguy.pip
+    - geerlingguy.docker
