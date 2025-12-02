@@ -9,22 +9,31 @@
 * Ansible
 * Ansible Lint
 
-### Clone the Repository:
+### Clone the repository:
 ```sh
 $ git clone https://github.com/algins/devops-for-developers-project-76.git && cd devops-for-developers-project-76
 ```
 
-### Install Ansible Galaxy Dependencies:
+### Install Ansible Galaxy dependencies:
 ```sh
 $ make install
 ```
 
-### Lint the Playbook:
+### Check Ansible playbook for errors:
 ```sh
 $ make lint
 ```
 
-### Run the Playbook:
+### Setup servers:
 ```sh
-$ make run-playbook
+$ make setup
 ```
+
+### Deploy the Redmine application:
+```sh
+$ make deploy
+```
+
+### Access application:
+Once deployed, access the application at:
+[https://source.id.lv](https://source.id.lv)

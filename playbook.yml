@@ -1,7 +1,30 @@
-- name: Install pip and docker modules
+- name: Redmine setup and deploy
   hosts: all
   become: true
 
   roles:
-    - geerlingguy.pip
-    - geerlingguy.docker
+    - role: geerlingguy.pip
+      tags: setup
+    - role: geerlingguy.docker
+      tags: setup
+
+  tasks:
+    - name: Create .env file from template
+      template:
+        src: templates/.env.j2
+        dest: .env
+        owner: root
+        group: root
+        mode: '0644'
+      tags: deploy
+
+    - name: Run Redmine container
+      community.docker.docker_container:
+        name: redmine
+        image: redmine:latest
+        restart_policy: always
+        state: started
+        published_ports:
+          - "{{ redmine_port }}:3000"
+        env_file: .env
+      tags: deploy
