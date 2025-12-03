@@ -5,7 +5,7 @@ setup:
 	ansible-playbook -i inventory.ini playbook.yml --tags setup
 
 deploy:
-	ansible-playbook -i inventory.ini playbook.yml --tags deploy
+	ansible-playbook -i inventory.ini playbook.yml --vault-password-file vault-password --tags deploy
 
 lint:
 	ansible-lint playbook.yml
