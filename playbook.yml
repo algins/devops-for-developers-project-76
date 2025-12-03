@@ -10,7 +10,7 @@
 
   tasks:
     - name: Create .env file from template
-      template:
+      ansible.builtin.template:
         src: templates/.env.j2
         dest: .env
         owner: root
