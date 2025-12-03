@@ -9,3 +9,6 @@ deploy:
 
 lint:
 	ansible-lint playbook.yml
+	
+vault:
+	ansible-vault edit group_vars/webservers/vault.yml
