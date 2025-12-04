@@ -24,6 +24,11 @@ $ make install
 $ make lint
 ```
 
+### Edit Ansible vault:
+```sh
+$ make edit-vault
+```
+
 ### Setup servers:
 ```sh
 $ make setup
